@@ -64,6 +64,22 @@ namespace IPL2Test
 			Assert::AreEqual(3, actual);
 			Assert::AreEqual(1, x);
 		}
+		TEST_METHOD(CastingThreeEdA)
+		{
+			int* ans = LinEqSolve::lin_eq_solve(1, 0, 1, 0, 3, 3);
+			int actual = ans[0];
+			int x = ans[1];
+			Assert::AreEqual(3, actual);
+			Assert::AreEqual(3, x);
+		}
+		TEST_METHOD(CastingThreeEdB)
+		{
+			int* ans = LinEqSolve::lin_eq_solve(0, 15, 0, 0, 15, 0);
+			int actual = ans[0];
+			int x = ans[1];
+			Assert::AreEqual(4, actual);
+			Assert::AreEqual(1, x);
+		}
 		TEST_METHOD(CastingOneAB_CD)
 		{
 			int* ans = LinEqSolve::lin_eq_solve(1, 1, 1, 1, 1, 1);
